@@ -16,22 +16,69 @@
     <div class="display medium-8 small-12 columns">
       x,y grid
       <div laura-brot
-        start-x="-2.1"
-        stop-x="2.1"
-        points-x="120"
-        start-y="-2.1"
-        stop-y="2.1"
-        points-y="120"
+        start-x="startX||-2.1"
+        stop-x="stopX||2.1"
+        points-x="pixelsHeight||300"
+        start-y="startY||-2.1"
+        stop-y="stopY||2.1"
+        points-y="pixelsWidth||300"
         dimentions="2"
-        depth="10"
+        depth="depth||24"
+        colors="colors"
+        style="border:1px solid #f0f;"
         >
       </div>
     </div>
+    {{pixelsWidth}}
     <div class="controls medium-4 small-12 columns">
       Controls
       <dl>
-        <dt>label</dt>
-        <dd><div class="button">action</div></dd>
+        <dt>depth</dt>
+        <dd>
+          <div>
+            <a href="#" editable-number="depth" e-min="0">{{ depth || 24 }}</a>
+          </div>  
+        </dd>
+        <dt>colors</dt>
+        <dd>
+          <ul class="inline-list">
+            <li ng-repeat="color in colors">
+              <div style="background-color:{{color}}"
+                editable-color="color" onaftersave="saveColor(color,$index)"
+                >
+                {{color || 'empty' }}
+              </div>
+            </li>
+          </ul>
+        </dd>
+        <dt>autosize</dt>
+        <dd>
+          <div class='button' ng-click="autoSize()">fill</div>
+        </dd>
+        <dt>width in pixels</dt>
+        <dd>
+          <input type="text" ng-model="pixelsWidth" />
+        </dd>
+        <dt>height in pixels</dt>
+        <dd>
+          <input type="text" ng-model="pixelsHeight" />
+        </dd>
+        <dt>Start X</dt>
+        <dd>
+          <a href="#" editable-range="startX" e-min="-2.1" e-max="2.1" e-step="0.05">{{ startX || 2.1 }}</a>
+        </dd>
+        <dt>Stop X</dt>
+        <dd>
+          <a href="#" editable-range="stopX" e-min="-2.1" e-max="2.1" e-step="0.05">{{ stopX || -2.1 }}</a>
+        </dd>
+        <dt>Start Y</dt>
+        <dd>
+          <a href="#" editable-range="startY" e-min="-2.1" e-max="2.1" e-step="0.05">{{ startY || 2.1 }}</a>
+        </dd>
+        <dt>Stop Y</dt>
+        <dd>
+          <a href="#" editable-range="stopY" e-min="-2.1" e-max="2.1" e-step="0.05">{{ stopY || -2.1 }}</a>
+        </dd>
       </dl>
     </div>
   </div>

@@ -1,5 +1,7 @@
-exclude = "{$exclude,bower_components,node_modules,builtAssets}"
+exclude = "{$exclude,builtAssets}"
 include = "{$include,.tm_properties,.gitignore}"
+
+excludeInFolderSearch = "{$exclude,bower_components,node_modules}"
 
 softTabs = true
 tabSize  = 2

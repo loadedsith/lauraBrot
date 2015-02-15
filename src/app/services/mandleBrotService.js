@@ -84,11 +84,7 @@ angular.module('lauraBrot')
           }else{
             value = _this.nthLevel2d(pointX, pointY, depth);
           }
-          lauraBrot[countX].push( {
-            value: value,
-            x: pointX,
-            y: pointY
-          });
+          lauraBrot[countX].push(value);
           countY++;
         }
         countX++;
@@ -122,10 +118,6 @@ angular.module('lauraBrot')
       var resultArray = [];
       while (count <= points) {
         var point = start + ((stop - start) / points) * count;
-        // console.log(
-        //   'point: ((stop - start) / points) * count = ',
-        //   '((' + stop + '-' + start + ') / ' +points + ') * ' + count + ') = ', 
-        //   point);
         resultArray.push(_this.levelOne1d(point));
         count++;
       }
