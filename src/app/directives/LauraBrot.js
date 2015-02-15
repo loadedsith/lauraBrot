@@ -126,12 +126,10 @@ angular.module('lauraBrot')
         });
         
         scope.$watch('pointsX',function (newValue,oldValue) {
-          debugger;
           scope.config.pointsX = Number(newValue);
           scope.generateDisplay();
         })
         scope.$watch('pointsY',function (newValue,oldValue) {
-          debugger;
           scope.config.pointsY = Number(newValue);
           scope.generateDisplay()
         })
