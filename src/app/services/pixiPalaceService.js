@@ -1,6 +1,7 @@
 angular.module('lauraBrot')
   .service('PixiPalaceService', function () {//$timeout, $interval, 
     'use strict'; 
+    
     console.log('PixiPalaceService Reporting in');
     var pixiPalace = this;
     if (PIXI === undefined) {
